@@ -37,7 +37,7 @@ pod 'WYLNotificationView'
 
 ##如何使用
 
-1.在你的项目中的AppDelegate.h文件和任何你想发送吐司的文件里,import"WYLNotification.h"
+1.在你的项目中的`AppDelegate.h`文件和任何你想发送吐司的文件里,`#import"WYLNotification.h"`
 
 2.如果你想发送普通的吐司需求,你可以写下如下代码.例如:
 
@@ -75,7 +75,7 @@ pod 'WYLNotificationView'
 
 	}
 	
-其中,`kTUCAOStr`是要发送字符串的key,`kTUCAODuration`是要展示的时间. 最后效果入 图1
+其中,`kTUCAOStr`是要发送字符串的key,`kTUCAODuration`是要展示的时间. 最后效果如 图1
 
 3.如果你想发送类似节日的吐司需求,你可以写下如下代码.例如:
 
