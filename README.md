@@ -163,6 +163,8 @@ pod 'WYLNotificationView'
     [[NSNotificationCenter defaultCenter] postNotificationName:kTSSpecialNotification object:nil userInfo:dict];
     
 	}
+	
+注意:特殊吐司不会自己消失,而是添加了手势上滑消失,或者点击按钮消失.
 
 
 #License
