@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -19,21 +19,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HGY-sK-eN4">
-                                <rect key="frame" x="87" y="63" width="30" height="30"/>
+                                <rect key="frame" x="83" y="138" width="30" height="30"/>
                                 <state key="normal" title="普通"/>
                                 <connections>
                                     <action selector="post:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VNs-mn-ID1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEh-DJ-gs8">
-                                <rect key="frame" x="87" y="136" width="30" height="30"/>
+                                <rect key="frame" x="83" y="211" width="30" height="30"/>
                                 <state key="normal" title="节日"/>
                                 <connections>
                                     <action selector="post2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dln-fE-gim"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRt-tW-EY8">
-                                <rect key="frame" x="87" y="206" width="30" height="30"/>
+                                <rect key="frame" x="83" y="281" width="30" height="30"/>
                                 <state key="normal" title="特殊"/>
                                 <connections>
                                     <action selector="post3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U5i-el-CoF"/>
@@ -45,8 +45,8 @@
                             <constraint firstItem="eEh-DJ-gs8" firstAttribute="centerX" secondItem="HGY-sK-eN4" secondAttribute="centerX" id="8D4-lP-Sgz"/>
                             <constraint firstItem="eEh-DJ-gs8" firstAttribute="leading" secondItem="eRt-tW-EY8" secondAttribute="leading" id="FiC-an-Ryj"/>
                             <constraint firstItem="eRt-tW-EY8" firstAttribute="top" secondItem="eEh-DJ-gs8" secondAttribute="bottom" constant="40" id="SKN-tq-wnC"/>
-                            <constraint firstItem="HGY-sK-eN4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="67" id="eAC-Hn-O5V"/>
-                            <constraint firstItem="HGY-sK-eN4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="43" id="exK-gJ-bm8"/>
+                            <constraint firstItem="HGY-sK-eN4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="63" id="eAC-Hn-O5V"/>
+                            <constraint firstItem="HGY-sK-eN4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="118" id="exK-gJ-bm8"/>
                             <constraint firstItem="eEh-DJ-gs8" firstAttribute="top" secondItem="HGY-sK-eN4" secondAttribute="bottom" constant="43" id="xvo-5U-BUD"/>
                         </constraints>
                     </view>

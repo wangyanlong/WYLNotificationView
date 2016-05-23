@@ -42,6 +42,16 @@
  */
 @property (nonatomic, strong) UIFont    *font;
 
+/**
+ *  设置吐司hidden的锁
+ */
+@property (nonatomic, assign) BOOL      tusiHidden;
+
+/**
+ *  控制吐司消失的timer
+ */
+@property (nonatomic, strong) NSTimer   *timer;
+
 /*!
  *  创建吐司
  */
@@ -56,5 +66,10 @@
  *  显示吐司
  */
 - (void)showSelf;
+
+/**
+ *  如果多次触发,保持在屏幕上方的方法
+ */
+- (void)keepSelf;
 
 @end

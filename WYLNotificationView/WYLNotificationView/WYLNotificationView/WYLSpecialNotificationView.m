@@ -10,6 +10,15 @@
 
 @implementation WYLSpecialNotificationView
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.tusiHidden = NO;
+    }
+    return self;
+}
+
 - (void)handleSwipe:(UISwipeGestureRecognizer*)recognizer {
     [self removeSelf];
 }
@@ -21,6 +30,11 @@
         self.frame = rect;
     } completion:^(BOOL finished) {
         [self removeFromSuperview];
+        if (self.timer) {
+            [self.timer invalidate];
+            self.timer = nil;
+        }
+        
     }];
 }
 
@@ -33,23 +47,22 @@
     recognizer.direction = UISwipeGestureRecognizerDirectionUp;
     [self addGestureRecognizer:recognizer];
     
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn setTitle:self.btnStr forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(btnMethod:) forControlEvents:UIControlEventTouchUpInside];
-    btn.frame = CGRectMake(self.frame.size.width * 0.75, 25, self.frame.size.width * 0.25 - 5, self.frame.size.height - 35);
-    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    btn.layer.masksToBounds = YES;
-    btn.layer.cornerRadius = 5.0;
-    if (self.btnColor){
-        btn.backgroundColor = self.btnColor;
+    _specialBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_specialBtn setTitle:self.btnStr forState:UIControlStateNormal];
+    [_specialBtn addTarget:self action:@selector(btnMethod:) forControlEvents:UIControlEventTouchUpInside];
+    _specialBtn.frame = CGRectMake(self.frame.size.width * 0.725, 30, self.frame.size.width * 0.275 - 15, 24);
+    [_specialBtn setTitleColor:[UIColor colorWithRed:166.0f/255.0f green:108.0f/255.0f blue:95.0f/255.0f alpha:1.00f] forState:UIControlStateNormal];
+    
+    if (self.font) {
+        [_specialBtn.titleLabel setFont:self.font];
     }else{
-        btn.backgroundColor = [UIColor colorWithRed:255/255.0 green:211/255.0 blue:106/255.0 alpha:1];
+        UIFont *font = [UIFont systemFontOfSize:20];
+        [_specialBtn.titleLabel setFont:font];
     }
     
-    [self addSubview:btn];
-    
+    [self addSubview:_specialBtn];
     UILabel *label = (UILabel *)[self viewWithTag:10000];
-    label.frame = CGRectMake(0, 20, self.frame.size.width - btn.frame.size.width, self.frame.size.height-20);
+    label.frame = CGRectMake(5, 30, self.frame.size.width - _specialBtn.frame.size.width-10, 24);
     
 }
 
@@ -71,6 +84,9 @@
     
 }
 
+- (void)dealloc
+{
 
+}
 
 @end

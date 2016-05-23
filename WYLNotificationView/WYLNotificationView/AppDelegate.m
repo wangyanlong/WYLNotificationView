@@ -48,7 +48,7 @@
     view.window = self.window;
     view.tusiStr = [dict objectForKey:kTUCAOStr];
     view.height = self.window.frame.size.height / 10.0f;
-    view.font = [UIFont systemFontOfSize:18];
+    view.font = [UIFont systemFontOfSize:20];
     view.duration = [[dict objectForKey:kTUCAODuration] floatValue];
     view.btnStr = [dict objectForKey:kTUBtnStr];
     
@@ -65,16 +65,30 @@
     
     NSDictionary *dict = [not userInfo];
     
-    WYLNotificationView *view = [[WYLNotificationView alloc]init];
+    WYLNotificationView *view = nil;
+    view = [self.window viewWithTag:20000];
     
-    view.window = self.window;
-    view.tusiStr = [dict objectForKey:kTUCAOStr];
-    view.height = self.window.frame.size.height / 10.0f;
-    view.font = [UIFont systemFontOfSize:18];
-    view.duration = [[dict objectForKey:kTUCAODuration] floatValue];
-    
-    [view createTuSi];
+    if (view){
+        
+        view.tusiStr = [dict objectForKey:kTUCAOStr];
+        view.duration = [[dict objectForKey:kTUCAODuration] floatValue];
+        [view keepSelf];
+        
+    }else{
+        
+        view = [[WYLNotificationView alloc]init];
+        
+        view.window = self.window;
+        view.tusiStr = [dict objectForKey:kTUCAOStr];
+        view.height = self.window.frame.size.height / 10.0f;
+        view.font = [UIFont systemFontOfSize:20];
+        view.duration = [[dict objectForKey:kTUCAODuration] floatValue];
+        
+        [view createTuSi];
 
+    }
+    
+    
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

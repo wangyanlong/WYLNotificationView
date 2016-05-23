@@ -25,6 +25,11 @@
  */
 @property (nonatomic, strong) UIColor   *btnColor;
 
+/**
+ *  按钮
+ */
+@property (nonatomic, strong) UIButton  *specialBtn;
+
 - (void)createBtn;
 - (void)removeSelf;
 
