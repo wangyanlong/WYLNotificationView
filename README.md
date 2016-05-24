@@ -53,16 +53,29 @@ pod 'WYLNotificationView'
     
     NSDictionary *dict = [not userInfo];
     
-    WYLNotificationView *view = [[WYLNotificationView alloc]init];
+    WYLNotificationView *view = nil;
+    view = (WYLNotificationView *)[self.window viewWithTag:15000];
     
-    view.window = self.window;
-    view.tusiStr = [dict objectForKey:kTUCAOStr];
-    view.height = self.window.frame.size.height / 10.0f;
-    view.font = [UIFont systemFontOfSize:18];
-    view.duration = [[dict objectForKey:kTUCAODuration] floatValue];
-    
-    [view createTuSi];
+    if (view){
+        
+        view.tusiStr = [dict objectForKey:kTUCAOStr];
+        view.duration = [[dict objectForKey:kTUCAODuration] floatValue];
+        [view keepSelf];
+        
+    }else{
+        
+        view = [[WYLNotificationView alloc]init];
+        
+        view.window = self.window;
+        view.tusiStr = [dict objectForKey:kTUCAOStr];
+        view.height = self.window.frame.size.height / 10.0f;
+        view.font = [UIFont systemFontOfSize:20];
+        view.duration = [[dict objectForKey:kTUCAODuration] floatValue];
+        
+        [view createTuSi];
 
+    }
+    
 	}
 	
 我们将吐司的view添加到window上,然后使其可以在任意界面展示.如果你要发送,你只需要配置一个dict,然后post它即可,例如:
@@ -136,23 +149,33 @@ pod 'WYLNotificationView'
     
     NSDictionary *dict = [not userInfo];
     
-    WYLSpecialNotificationView *view = [[WYLSpecialNotificationView alloc]init];
+    WYLSpecialNotificationView *view = nil;
+    view = (WYLSpecialNotificationView *)[self.window viewWithTag:16000];
+
+    if (view) {
+        view.tusiStr = [dict objectForKey:kTUCAOStr];
+        [view keepSelf];
+    }else{
+        view = [[WYLSpecialNotificationView alloc]init];
+        
+        view.window = self.window;
+        view.tusiStr = [dict objectForKey:kTUCAOStr];
+        view.height = self.window.frame.size.height / 10.0f;
+        view.font = [UIFont systemFontOfSize:20];
+        view.duration = [[dict objectForKey:kTUCAODuration] floatValue];
+        view.btnStr = [dict objectForKey:kTUBtnStr];
+        
+        __weak WYLSpecialNotificationView *weakView = view;
+        view.callBtn = ^{
+            [weakView removeSelf];
+        };
+        
+        [view createTuSi];
+        [view createBtn];
+    }
     
-    view.window = self.window;
-    view.tusiStr = [dict objectForKey:kTUCAOStr];
-    view.height = self.window.frame.size.height / 10.0f;
-    view.font = [UIFont systemFontOfSize:18];
-    view.duration = [[dict objectForKey:kTUCAODuration] floatValue];
-    view.btnStr = [dict objectForKey:kTUBtnStr];
-    
-    __weak WYLSpecialNotificationView *weakView = view;
-    view.callBtn = ^{
-        [weakView removeSelf];
-    };
-    
-    [view createTuSi];
-    [view createBtn];
 	}
+
 	
 这次你除了要传一个展示的字符串,展示时间以外,你还需要传一个btn的按钮名字.效果如图3.例如
 
@@ -175,6 +198,11 @@ pod 'WYLNotificationView'
 2.特殊吐司开放出了btn属性
 
 3.调整了一些颜色
+
+**1.0.8** 
+
+1.修改了特殊吐司消失的逻辑
+
 
 #License
 MIT

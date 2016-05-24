@@ -15,6 +15,7 @@
     self = [super init];
     if (self) {
         self.tusiHidden = NO;
+        self.tag = 16000;
     }
     return self;
 }
@@ -63,6 +64,17 @@
     [self addSubview:_specialBtn];
     UILabel *label = (UILabel *)[self viewWithTag:10000];
     label.frame = CGRectMake(5, 30, self.frame.size.width - _specialBtn.frame.size.width-10, 24);
+    
+}
+
+/**
+ *  如果多次触发,保持在屏幕上方的方法
+ */
+- (void)keepSelf{
+    
+    UILabel *showLabel = nil;
+    showLabel = (UILabel *)[self.window viewWithTag:10000];
+    showLabel.text = self.tusiStr;
     
 }
 

@@ -5,6 +5,7 @@
 //  Created by 王老师 on 15/12/23.
 //  Copyright © 2015年 wyl. All rights reserved.
 //
+
 #import "WYLNotification.h"
 #import "AppDelegate.h"
 
@@ -43,22 +44,31 @@
     
     NSDictionary *dict = [not userInfo];
     
-    WYLSpecialNotificationView *view = [[WYLSpecialNotificationView alloc]init];
+    WYLSpecialNotificationView *view = nil;
+    view = (WYLSpecialNotificationView *)[self.window viewWithTag:16000];
+
+    if (view) {
+        view.tusiStr = [dict objectForKey:kTUCAOStr];
+        [view keepSelf];
+    }else{
+        view = [[WYLSpecialNotificationView alloc]init];
+        
+        view.window = self.window;
+        view.tusiStr = [dict objectForKey:kTUCAOStr];
+        view.height = self.window.frame.size.height / 10.0f;
+        view.font = [UIFont systemFontOfSize:20];
+        view.duration = [[dict objectForKey:kTUCAODuration] floatValue];
+        view.btnStr = [dict objectForKey:kTUBtnStr];
+        
+        __weak WYLSpecialNotificationView *weakView = view;
+        view.callBtn = ^{
+            [weakView removeSelf];
+        };
+        
+        [view createTuSi];
+        [view createBtn];
+    }
     
-    view.window = self.window;
-    view.tusiStr = [dict objectForKey:kTUCAOStr];
-    view.height = self.window.frame.size.height / 10.0f;
-    view.font = [UIFont systemFontOfSize:20];
-    view.duration = [[dict objectForKey:kTUCAODuration] floatValue];
-    view.btnStr = [dict objectForKey:kTUBtnStr];
-    
-    __weak WYLSpecialNotificationView *weakView = view;
-    view.callBtn = ^{
-        [weakView removeSelf];
-    };
-    
-    [view createTuSi];
-    [view createBtn];
 }
 
 - (void)showTS:(NSNotification *)not{
@@ -66,7 +76,7 @@
     NSDictionary *dict = [not userInfo];
     
     WYLNotificationView *view = nil;
-    view = [self.window viewWithTag:20000];
+    view = (WYLNotificationView *)[self.window viewWithTag:15000];
     
     if (view){
         
@@ -87,7 +97,6 @@
         [view createTuSi];
 
     }
-    
     
 }
 

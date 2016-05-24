@@ -15,7 +15,7 @@
     self = [super init];
     
     if (self) {
-        self.tag = 20000;
+        self.tag = 15000;
         self.tusiHidden = YES;
     }
     
