@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "WYLNotificationView"
-  s.version          = "1.0.8"
+  s.version          = "1.0.9"
   s.summary          = "一个用来展示提醒或者创建节日图片下落的view"
   s.description      = <<-DESC
 			一个用来展示提醒或者创建节日图片下落的view. 553836854@qq.com            
