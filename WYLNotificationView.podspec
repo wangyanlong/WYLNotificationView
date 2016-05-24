@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "WYLNotificationView"
-  s.version          = "1.0.9"
+  s.version          = "1.1.0"
   s.summary          = "一个用来展示提醒或者创建节日图片下落的view"
   s.description      = <<-DESC
 			一个用来展示提醒或者创建节日图片下落的view. 553836854@qq.com            
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   # s.osx.deployment_target = '10.7'
   s.requires_arc = true
 
-  s.source_files = 'WYLNotificationView/WYLNotificationView/WYLNotificationView/*.{h,m}'
+  s.source_files = 'WYLNotificationView/WYLNotificationView/WYLNotificationView/*.{h,m,png}'
   # s.resources = 'Assets'
 
   # s.ios.exclude_files = 'Classes/osx'

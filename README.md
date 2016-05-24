@@ -203,6 +203,10 @@ pod 'WYLNotificationView'
 
 1.修改了特殊吐司消失的逻辑
 
+**1.1.0** 
+
+1.为特殊吐司加入了箭头图片
+
 
 #License
 MIT
