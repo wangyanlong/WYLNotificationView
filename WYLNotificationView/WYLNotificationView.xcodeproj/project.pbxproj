@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		183007761CF41AA20098C5EC /* arrowPoint@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 183007741CF41AA20098C5EC /* arrowPoint@2x.png */; };
+		183007771CF41AA20098C5EC /* arrowPoint@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 183007751CF41AA20098C5EC /* arrowPoint@3x.png */; };
 		18662FEA1C2A3BD1000B6F0D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18662FE91C2A3BD1000B6F0D /* main.m */; };
 		18662FED1C2A3BD1000B6F0D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18662FEC1C2A3BD1000B6F0D /* AppDelegate.m */; };
 		18662FF01C2A3BD1000B6F0D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18662FEF1C2A3BD1000B6F0D /* ViewController.m */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		183007741CF41AA20098C5EC /* arrowPoint@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowPoint@2x.png"; sourceTree = "<group>"; };
+		183007751CF41AA20098C5EC /* arrowPoint@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowPoint@3x.png"; sourceTree = "<group>"; };
 		18662FE51C2A3BD1000B6F0D /* WYLNotificationView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WYLNotificationView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18662FE91C2A3BD1000B6F0D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18662FEB1C2A3BD1000B6F0D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 		186630031C2A40C2000B6F0D /* WYLNotificationView */ = {
 			isa = PBXGroup;
 			children = (
+				183007741CF41AA20098C5EC /* arrowPoint@2x.png */,
+				183007751CF41AA20098C5EC /* arrowPoint@3x.png */,
 				187441441C3A167500E1CE94 /* WYLHolidayNotificationView.h */,
 				187441451C3A167500E1CE94 /* WYLHolidayNotificationView.m */,
 				1874414C1C3A5E9300E1CE94 /* WYLSpecialNotificationView.h */,
@@ -167,6 +173,8 @@
 				18662FF81C2A3BD1000B6F0D /* LaunchScreen.storyboard in Resources */,
 				18662FF51C2A3BD1000B6F0D /* Assets.xcassets in Resources */,
 				1874414B1C3A4DF200E1CE94 /* girl.png in Resources */,
+				183007761CF41AA20098C5EC /* arrowPoint@2x.png in Resources */,
+				183007771CF41AA20098C5EC /* arrowPoint@3x.png in Resources */,
 				18662FF31C2A3BD1000B6F0D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

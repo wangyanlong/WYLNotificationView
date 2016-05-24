@@ -40,30 +40,29 @@
     
     self.timer = [NSTimer scheduledTimerWithTimeInterval:self.duration target:self selector:@selector(checkHidden) userInfo:nil repeats:YES];
     
-    UILabel *showLabel = nil;
-    showLabel = (UILabel *)[self.window viewWithTag:10000];
+    self.showLabel = (UILabel *)[self.window viewWithTag:10000];
     
     self.frame = CGRectMake(0, self.height*-1, self.window.frame.size.width, self.height);
     
-    showLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 20, self.frame.size.width, self.frame.size.height-20)];
+    self.showLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 20, self.frame.size.width, self.frame.size.height-20)];
     
-    showLabel.tag = 10000;
+    self.showLabel.tag = 10000;
     
-    showLabel.textAlignment = NSTextAlignmentCenter;
+    self.showLabel.textAlignment = NSTextAlignmentCenter;
     
-    showLabel.text = self.tusiStr;
-    showLabel.textColor = [UIColor colorWithRed:68.0f/255.0f green:68.0f/255.0f blue:68.0f/255.0f alpha:1.00f];
+    self.showLabel.text = self.tusiStr;
+    self.showLabel.textColor = [UIColor colorWithRed:68.0f/255.0f green:68.0f/255.0f blue:68.0f/255.0f alpha:1.00f];
     
     if (self.font) {
-        showLabel.font = self.font;
+        self.showLabel.font = self.font;
     }
     
-    [self addSubview:showLabel];
+    [self addSubview:self.showLabel];
     
     if (self.color) {
-        self.backgroundColor = showLabel.backgroundColor = self.color;
+        self.backgroundColor = self.showLabel.backgroundColor = self.color;
     }else{
-        self.backgroundColor = showLabel.backgroundColor = [UIColor colorWithRed:197.0f/255.0f green:229.0f/255.0f blue:169.0f/255.0f alpha:1.00f];
+        self.backgroundColor = self.showLabel.backgroundColor = [UIColor colorWithRed:197.0f/255.0f green:229.0f/255.0f blue:169.0f/255.0f alpha:1.00f];
     }
     
     [self.window addSubview:self];

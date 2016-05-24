@@ -52,6 +52,11 @@
  */
 @property (nonatomic, strong) NSTimer   *timer;
 
+/**
+ *  吐司的label
+ */
+@property (nonatomic, strong) UILabel   *showLabel;
+
 /*!
  *  创建吐司
  */

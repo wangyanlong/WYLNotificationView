@@ -62,8 +62,19 @@
     }
     
     [self addSubview:_specialBtn];
-    UILabel *label = (UILabel *)[self viewWithTag:10000];
-    label.frame = CGRectMake(5, 30, self.frame.size.width - _specialBtn.frame.size.width-10, 24);
+    
+    self.arrowPointImageView = [[UIImageView alloc] init];
+    
+    if (self.arrowImg){
+        self.arrowPointImageView.image = self.arrowImg;
+    }else{
+        self.arrowPointImageView.image = [UIImage imageNamed:@"arrowPoint"];
+    }
+    
+    self.arrowPointImageView.frame = CGRectMake(30, 30, 15, 24);
+    [self addSubview:self.arrowPointImageView];
+    
+    self.showLabel.frame = CGRectMake(25, 30, self.frame.size.width - _specialBtn.frame.size.width-10, 24);
     
 }
 

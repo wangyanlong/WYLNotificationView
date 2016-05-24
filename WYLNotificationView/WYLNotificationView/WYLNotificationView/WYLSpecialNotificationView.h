@@ -30,6 +30,16 @@
  */
 @property (nonatomic, strong) UIButton  *specialBtn;
 
+/**
+ *  箭头的imageView
+ */
+@property (nonatomic, strong) UIImageView *arrowPointImageView;
+
+/**
+ *  箭头的img
+ */
+@property (nonatomic, strong) UIImage *arrowImg;
+
 - (void)createBtn;
 - (void)removeSelf;
 
